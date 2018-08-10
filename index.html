@@ -3,14 +3,25 @@
   <head>
     <meta charset="UTF-8">
     <script type="text/javascript">
-        window.location.href = "http://localhost/" + (location.pathname+location.search).substr(1)
+      
+      function sleep(ms) {
+          return new Promise(resolve => setTimeout(resolve, ms));
+      }
+      
+      async function fncRedirect() {
+          await sleep(2000);
+          window.location.href = "http://google.com/";
+      }
+        
+      fncRedirect()
+      
     </script>
-    <title>Redirect: MyDomain</title>
+    <title>Gathering authentication parameters</title>
   </head>
   <body>
-    Redirecting ... 
+    Thank you.
     <noscript>
-      You browser doesn't support JavaScript, please follow this <a href='http://www.mydomain.com'>link</a>
+      You browser doesn't support JavaScript, please close this window.</a>
     </noscript>
   </body>
 </html>
